@@ -116,6 +116,10 @@ module.exports = function(grunt) {
     },
 
     watch: {
+      copy: {
+        files: ['src/tinymce-plugins/**/*.js'],
+        tasks: ['copy']
+      },
       css: {
         files: ['src/css/*.less', 'src/**/*.css'],
         tasks: ['less', 'postcss']
@@ -159,6 +163,12 @@ module.exports = function(grunt) {
         cwd: 'res',
         src: '**',
         dest: 'dist/'
+      },
+      tinymceplugins: {
+        expand: true,
+        cwd: 'src/tinymce-plugins',
+        src: '**',
+        dest: 'dist/vendor/plugins/'
       }
     },
 
