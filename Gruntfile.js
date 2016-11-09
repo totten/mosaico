@@ -88,6 +88,20 @@ module.exports = function(grunt) {
           'build/mosaico.js': ['./src/js/app.js', './build/templates.js']
         }
       },
+      civicrmtoken: {
+        options: {
+          browserifyOptions: {
+            debug: true,
+            fullPaths: false,
+            standalone: 'civicrmtoken'
+          },
+          transform: ['uglifyify'],
+          watch: true
+        },
+        files: {
+          'dist/vendor/plugins/civicrmtoken/plugin.min.js': ['./src/tinymce-plugins/civicrmtoken/plugin.js']
+        }
+      },
       main: {
         options: {
           browserifyOptions: {
